@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Karacter AI: install dependencies",
+			"type": "shell",
+			"command": "npm install",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Karacter AI: verify",
+			"type": "shell",
+			"command": "npm run typecheck && npm test && npm run build",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Karacter AI: dev server",
+			"type": "shell",
+			"command": "npm run dev",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

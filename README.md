@@ -16,7 +16,7 @@ Karacter AI is a multimodal conversational workspace under active, milestone-bas
 4. In Supabase Auth URL configuration, allow the local callbacks `http://localhost:5173/auth/callback` and `http://localhost:5173/auth/update-password`, plus the Codespaces/production URLs you use. Google and GitHub sign-in use the providers configured in the Supabase dashboard; configure their Supabase callback URLs there as usual.
 5. Start the development server with `npm run dev`.
 
-The current `.env` in this workspace contains empty placeholders only. `.env` files are ignored by Git.
+Keep real project values only in ignored local `.env` or `.env.local` files; never commit them. The diagnostic command prints variable names and status only, not key values.
 
 ## Scripts
 
@@ -24,6 +24,7 @@ The current `.env` in this workspace contains empty placeholders only. `.env` fi
 - `npm run typecheck` — TypeScript project check
 - `npm test` — unit tests
 - `npm run build` — type-check and production bundle
+- `npm run check:supabase` — read-only check that the configured public Supabase key reaches the REST API; prints variable names and visible endpoint names only, never key values
 
 ## Current functionality and limits
 

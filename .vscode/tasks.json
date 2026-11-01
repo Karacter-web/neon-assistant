@@ -30,6 +30,13 @@
 			},
 			"isBackground": true,
 			"problemMatcher": []
+		},
+		{
+			"label": "KAI precommit safety audit",
+			"type": "shell",
+			"command": "printf '%s\\n' '--- status ---' && git status --short && printf '%s\\n' '--- staged names ---' && git diff --cached --name-only && printf '%s\\n' '--- unstaged names ---' && git diff --name-only && printf '%s\\n' '--- tracked environment files ---' && git ls-files -- .env .env.local .env.example && printf '%s\\n' '--- ignore rules ---' && (git check-ignore -v .env .env.local || true) && printf '%s\\n' '--- current branch ---' && git branch --show-current && printf '%s\\n' '--- remotes ---' && git remote",
+			"isBackground": false,
+			"problemMatcher": []
 		}
 	]
 }
